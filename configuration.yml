@@ -1,0 +1,20 @@
+logging:
+  level: INFO
+
+  loggers:
+    me.pedrazas.heartbeat: DEBUG
+	
+  appenders:
+    - type: file
+      currentLogFilename: ./log/heartbeat.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /var/log/heartbeat-%d.log
+      archivedFileCount: 5
+      timeZone: UTC
+
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      target: stdout
+
